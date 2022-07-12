@@ -74,19 +74,13 @@ export const hotelInputs = [
     id: "name",
     label: "Name",
     type: "text",
-    placeholder: "My Hotel",
-  },
-  {
-    id: "type",
-    label: "Type",
-    type: "text",
-    placeholder: "hotel",
+    placeholder: "Event Ground",
   },
   {
     id: "city",
     label: "City",
     type: "text",
-    placeholder: "New York",
+    placeholder: "Nairobi",
   },
   {
     id: "address",
@@ -113,10 +107,16 @@ export const hotelInputs = [
     placeholder: "description",
   },
   {
+    id: "people",
+    label: "Maximum people",
+    type: "text",
+    placeholder: "400",
+  },
+  {
     id: "cheapestPrice",
     label: "Price",
     type: "text",
-    placeholder: "100",
+    placeholder: "1000",
   },
 ];
 

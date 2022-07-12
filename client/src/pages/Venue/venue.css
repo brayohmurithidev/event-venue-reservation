@@ -1,0 +1,115 @@
+.venueContainer {
+  min-height: 80vh;
+}
+.VenueWrapper {
+  display: flex;
+  padding: 30px;
+}
+.venueLeft {
+  flex: 2;
+}
+.VenueTitle {
+  font-size: 24px;
+}
+.venueAddress {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.venueDistance {
+  color: #0071c2;
+  font-weight: 500;
+}
+
+.venuePriceHighlight {
+  color: #008009;
+  font-weight: 500;
+}
+.venueImgWrapper {
+  width: 33%;
+}
+
+.venueImg {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.venueDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  /* margin-top: 0px; */
+}
+
+.venueDetailsTexts {
+  flex: 3;
+}
+.venueDetailsTitle {
+  margin-top: 20px;
+}
+.venueDesc {
+  font-size: 14px;
+  margin-top: 20px;
+}
+.venueRight {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: #fff;
+  background-color: #d48166;
+}
+.venueRight h1 {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #373a36;
+}
+.venueRight form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.formInputWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.formItem {
+  display: flex;
+  flex-direction: column;
+}
+.formItem label {
+  font-weight: 600;
+}
+.venueTextArea {
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.formItem input,
+.inputSelect {
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.inputSelect {
+  width: 150px;
+}
+.venueButton {
+  padding: 10px;
+  background-color: #0071c2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}

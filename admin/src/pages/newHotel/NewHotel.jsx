@@ -12,7 +12,7 @@ const NewHotel = () => {
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error } = useFetch("/rooms");
+  const { data, loading, error } = useFetch("/grounds");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -25,8 +25,8 @@ const NewHotel = () => {
     );
     setRooms(value);
   };
-  
-  console.log(files)
+
+  console.log(files);
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -52,8 +52,10 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post("/hotels", newhotel);
-    } catch (err) {console.log(err)}
+      await axios.post("/venues", newhotel);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="new">
@@ -88,6 +90,19 @@ const NewHotel = () => {
                   style={{ display: "none" }}
                 />
               </div>
+              <div className="formInput">
+                <label>Type</label>
+                <select id="type" onChange={handleChange}>
+                  <option></option>
+                  <option value="banquethalls">Banquet Halls</option>
+                  <option value="hotels">Hotels</option>
+                  <option value="resturants">Resturants</option>
+                  <option value="partyhalls">Party Halls</option>
+                  <option value="resorts">Resorts</option>
+                  <option value="marriagehalls">Marriage-Halls</option>
+                  <option value="partylawns">Party Lawns</option>
+                </select>
+              </div>
 
               {hotelInputs.map((input) => (
                 <div className="formInput" key={input.id}>
@@ -105,19 +120,6 @@ const NewHotel = () => {
                 <select id="featured" onChange={handleChange}>
                   <option value={false}>No</option>
                   <option value={true}>Yes</option>
-                </select>
-              </div>
-              <div className="selectRooms">
-                <label>Rooms</label>
-                <select id="rooms" multiple onChange={handleSelect}>
-                  {loading
-                    ? "loading"
-                    : data &&
-                      data.map((room) => (
-                        <option key={room._id} value={room._id}>
-                          {room.title}
-                        </option>
-                      ))}
                 </select>
               </div>
               <button onClick={handleClick}>Send</button>

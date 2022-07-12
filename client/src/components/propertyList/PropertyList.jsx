@@ -2,14 +2,14 @@ import useFetch from "../../hooks/useFetch";
 import "./propertyList.css";
 
 const PropertyList = () => {
-  const { data, loading, error } = useFetch("/hotels/countByType");
+  const { data, loading, error } = useFetch("/venues/countByType");
 
   const images = [
-    "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_resorts/6f87c6143fbd51a0bb5d15ca3b9cf84211ab0884.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg",
+    "https://d24l7ypac8dw56.cloudfront.net/MenuImages/0-90973-86779.jpg",
+    "https://www.spoorti.in/assets/images/party/party-lawn1.jpg",
+    "http://www.hamaraevent.com/uploads/blog/0076802001461325091.jpg",
+    "https://www.cataloniahotels.com/en/blog/wp-content/uploads/2018/07/Catalonia-Bavaro-Resort_Baja.jpg",
+    "http://www.silversprings-hotel.com/images/photos/meetings_events/meetings_ostrich_640x350.jpg",
   ];
   return (
     <div className="pList">
@@ -18,16 +18,14 @@ const PropertyList = () => {
       ) : (
         <>
           {data &&
-            images.map((img,i) => (
+            images.map((img, i) => (
               <div className="pListItem" key={i}>
-                <img
-                  src={img}
-                  alt=""
-                  className="pListImg"
-                />
+                <img src={img} alt="" className="pListImg" />
                 <div className="pListTitles">
                   <h1>{data[i]?.type}</h1>
-                  <h2>{data[i]?.count} {data[i]?.type}</h2>
+                  <h2>
+                    {data[i]?.count} {data[i]?.type}
+                  </h2>
                 </div>
               </div>
             ))}

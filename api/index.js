@@ -3,13 +3,15 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
-import hotelsRoute from "./routes/hotels.js";
-import roomsRoute from "./routes/rooms.js";
+import venuesRoute from "./routes/venues.js";
+import bookingsRoute from "./routes/bookings.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import emailRoute from "./routes/email.js";
+
+dotenv.config();
 
 const app = express();
-dotenv.config();
 
 const connect = async () => {
   try {
@@ -25,15 +27,17 @@ mongoose.connection.on("disconnected", () => {
 });
 
 //middlewares
-app.use(cors())
-app.use(cookieParser())
+app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
-app.use("/api/users", usersRoute);
-app.use("/api/hotels", hotelsRoute);
-app.use("/api/rooms", roomsRoute);
 
+app.use("/api/users", usersRoute);
+app.use("/api/venues", venuesRoute);
+
+app.use("/api/bookings", bookingsRoute);
+app.use("/api/email", emailRoute);
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";

@@ -66,7 +66,7 @@ function App() {
                 }
               />
             </Route>
-            <Route path="hotels">
+            <Route path="venues">
               <Route
                 index
                 element={
@@ -87,12 +87,12 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewHotel  />
+                    <NewHotel />
                   </ProtectedRoute>
                 }
               />
             </Route>
-            <Route path="rooms">
+            <Route path="bookings">
               <Route
                 index
                 element={
@@ -113,7 +113,7 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewRoom  />
+                    <NewRoom />
                   </ProtectedRoute>
                 }
               />

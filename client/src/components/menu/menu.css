@@ -1,0 +1,61 @@
+.menu {
+}
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.mArrow {
+  position: absolute;
+  color: white;
+  top: -12px;
+  right: -8px;
+  z-index: 2;
+}
+.menuItemsWrapper {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  background-color: #121726;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  right: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menuItems ul {
+  padding: 5px 20px;
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+}
+hr {
+  color: white;
+  width: 90%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.menuListItem {
+  list-style: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.links {
+  text-decoration: none;
+  color: inherit;
+}
+.menuListItem:hover {
+  color: #9daaf2;
+}
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px 0;
+  border: none;
+  border-radius: 5px;
+}

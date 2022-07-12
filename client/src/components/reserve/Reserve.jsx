@@ -8,9 +8,9 @@ import { SearchContext } from "../../context/SearchContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Reserve = ({ setOpen, hotelId }) => {
+const Reserve = ({ setOpen, venueId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+  const { data, loading, error } = useFetch(`/venues/ground/${venueId}`);
   const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {
@@ -55,7 +55,7 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const res = axios.put(`/rooms/availability/${roomId}`, {
+          const res = axios.put(`/venues/availability/${roomId}`, {
             dates: alldates,
           });
           return res.data;
@@ -85,14 +85,14 @@ const Reserve = ({ setOpen, hotelId }) => {
               <div className="rPrice">{item.price}</div>
             </div>
             <div className="rSelectRooms">
-              {item.roomNumbers.map((roomNumber) => (
+              {item.groundNumbers.map((groundNumber) => (
                 <div className="room">
-                  <label>{roomNumber.number}</label>
+                  <label>{groundNumber.number}</label>
                   <input
                     type="checkbox"
-                    value={roomNumber._id}
+                    value={groundNumber._id}
                     onChange={handleSelect}
-                    disabled={!isAvailable(roomNumber)}
+                    disabled={!isAvailable(groundNumber)}
                   />
                 </div>
               ))}

@@ -4,14 +4,14 @@ export const userColumns = [
     field: "user",
     headerName: "User",
     width: 230,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"} alt="avatar" />
-          {params.row.username}
-        </div>
-      );
-    },
+    // renderCell: (params) => {
+    //   return (
+    //     <div className="cellWithImg">
+    //       <img className="cellImg" src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"} alt="avatar" />
+    //       {params.row.username}
+    //     </div>
+    //   );
+    // },
   },
   {
     field: "email",
@@ -37,7 +37,26 @@ export const userColumns = [
 ];
 
 export const hotelColumns = [
-  { field: "_id", headerName: "ID", width: 250 },
+  { field: "_id", headerName: "ID", width: 50 },
+  {
+    field: "user",
+    headerName: "User",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img
+            className="cellImg"
+            src={
+              params.row.photos[0] || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
+            }
+            alt="avatar"
+          />
+          {params.row.name}
+        </div>
+      );
+    },
+  },
   {
     field: "name",
     headerName: "Name",
@@ -58,28 +77,43 @@ export const hotelColumns = [
     headerName: "City",
     width: 100,
   },
+  {
+    field: "people",
+    headerName: "Max people",
+    width: 100,
+  },
+  {
+    field: "price",
+    headerName: "price",
+    width: 100,
+  },
 ];
 
 export const roomColumns = [
   { field: "_id", headerName: "ID", width: 70 },
   {
-    field: "title",
-    headerName: "Title",
+    field: "name",
+    headerName: "Name",
     width: 230,
   },
   {
-    field: "desc",
-    headerName: "Description",
+    field: "email",
+    headerName: "Email",
     width: 200,
   },
   {
-    field: "price",
-    headerName: "Price",
-    width: 100,
+    field: "services",
+    headerName: "Services",
+    width: 250,
   },
   {
-    field: "maxPeople",
-    headerName: "Max People",
+    field: "amount",
+    headerName: "Amount",
+    width: 250,
+  },
+  {
+    field: "payed",
+    headerName: "Payed",
     width: 100,
   },
 ];

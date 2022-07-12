@@ -1,0 +1,83 @@
+.payment {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pContainer {
+  width: 400px;
+  display: flex;
+  color: #1a2238;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+}
+.pClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: red;
+}
+.pinformation {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.pText {
+  font-size: 14px;
+  font-weight: 400;
+}
+.pEmphasize {
+  font-weight: 600;
+  color: green;
+}
+.paymentDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.paymentDetails span {
+  font-weight: 400;
+}
+.paction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.pSuccess {
+  color: green;
+  margin-bottom: 5px;
+}
+.pFail {
+  color: red;
+  margin-bottom: 5px;
+}
+.paction input {
+  height: 30px;
+  padding: 0 10px;
+  font-weight: 300;
+}
+.pButton {
+  border: none;
+  padding: 10px 20px;
+  background-color: orangered;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+.pButton:disabled {
+  cursor: not-allowed;
+}

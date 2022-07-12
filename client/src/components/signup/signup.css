@@ -1,0 +1,63 @@
+.signup {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.418);
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signupContainer {
+  display: flex;
+  width: max-content;
+  background-color: gray;
+  padding: 20px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.sClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: red;
+}
+.sMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0rem;
+}
+.sSuccess {
+  color: rgb(7, 237, 7);
+}
+.sError {
+  color: #ff6a3d;
+}
+.inputWrapper {
+  display: flex;
+  gap: 20px;
+}
+.sInput {
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.sButton {
+  padding: 10px 0;
+  background-color: #0070c2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
